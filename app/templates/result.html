@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diagnosify | Үр дүн</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="gradient-bg">
+  <div class="container glass morph">
+    <h1><i class="fas fa-notes-medical"></i> Үр дүн</h1>
+    <p class="tagline">🧠 Танай шинж тэмдгүүдтэй хамгийн тохирох өвчнүүд:</p>
+
+    <div class="symptom-chip">
+      <i class="fas fa-stethoscope"></i>
+      <span>{{ ', '.join(symptoms) }}</span>
+    </div>
+
+    <ul class="results-list">
+      {% for result in results %}
+        <li>
+          <div class="result-title">
+            <i class="fas fa-stethoscope"></i>
+            <span>{{ result['name'] }}</span>
+          </div>
+          <div class="result-score">
+            <span class="badge">{{ result['match_count'] }}/{{ result['total_symptoms'] }} шинж тэмдэг таарсан!</span> <!-- Match count -->
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+    
+
+    <a href="/" class="btn"><i class="fas fa-arrow-left"></i> Буцах</a>
+  </div>
+</body>
+</html>

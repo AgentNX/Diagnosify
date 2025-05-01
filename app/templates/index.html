@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diagnosify | Шинж Тэмдэг Шалгах</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="gradient-bg">
+  <div class="container glass morph">
+    <h1><i class="fas fa-microscope"></i> Diagnosify</h1>
+    <p class="tagline">🔬 Өвчний шинж тэмдэг таних ухаалаг систем</p>
+
+    <form method="POST" class="form-style">
+      <div class="input-group">
+        <input type="text" id="symptoms" name="symptoms" required>
+        <label for="symptoms"><i class="fas fa-heartbeat"></i> Шинж тэмдгүүд (таслалаар):</label>
+        <div class="underline"></div>
+      </div>
+      <button type="submit" class="btn">
+        <i class="fas fa-search-plus"></i> Шалгах
+      </button>
+    </form>
+
+    <footer>
+      <p><i class="fas fa-code"></i> 2025 ⎯ TX Software</p>
+    </footer>
+  </div>
+</body>
+</html>

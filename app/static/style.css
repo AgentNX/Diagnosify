@@ -143,8 +143,16 @@ body {
   text-align: left;
   display: flex;
   flex-direction: column;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Hover Effect for Results */
+.results-list li:hover {
+  background-color: #f1f8ff;
+  border-color: #c6d7ff;
+}
+
+/* Result Title */
 .result-title {
   font-size: 18px;
   font-weight: 600;
@@ -159,25 +167,34 @@ body {
   font-size: 1.1rem;
 }
 
+/* Result Badge (Match Count) */
 .result-score .badge {
   font-size: 14px;
   padding: 6px 12px;
-  background-color: #38f9d7; /* Color for the match count */
+  background-color: #38f9d7; /* Default color for the match count */
   color: #333;
   border-radius: 12px;
   display: inline-block;
   font-weight: bold;
   margin-top: 5px;
   text-transform: uppercase;
+  transition: background-color 0.3s ease;
 }
 
-/* Custom styling for result item, including hover effect */
-.results-list li:hover {
-  background-color: #f1f8ff;
-  border-color: #c6d7ff;
+/* Color classes for the badge (Match percentage based) */
+.badge.high {
+  background-color: #ff4c4c; /* red for high match */
 }
 
-/* Animation for fade-in effect */
+.badge.medium {
+  background-color: #ff6600; /* orange for medium match */
+}
+
+.badge.low {
+  background-color: #155800; /* green for low match */
+}
+
+/* Animations for smoother transition effects */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }

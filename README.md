@@ -22,10 +22,10 @@ python run.py
 ```
 
 ## Main Page
-![image](https://github.com/user-attachments/assets/fb069216-be51-48ac-bf08-c65d1d2c63de)
+![Main](https://github.com/user-attachments/assets/e1f3a2ad-7859-4225-9a0e-44186fb396a7)
 
 ## Result Page
-![image](https://github.com/user-attachments/assets/5f456ac3-3e84-4964-b2f4-b5fa88b546f4)
+![Result](https://github.com/user-attachments/assets/69999250-8496-4242-a935-a2482e448adb)
 
 ## RANDOM
 ```

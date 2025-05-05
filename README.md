@@ -2,6 +2,8 @@
 
 Diagnosify is a simple, web-based symptom checker that helps users match their symptoms with possible medical diagnoses. It provides a straightforward user interface for inputting symptoms, comparing them with a database of conditions, and displaying the most likely diagnoses along with their confidence scores.
 
+![diagnosify_icon](https://github.com/user-attachments/assets/8dbc8a53-ae6f-4b04-b7e8-e1df115410f6)
+
 ---
 
 ## **Table of Contents**
@@ -33,9 +35,11 @@ This application is intended to be lightweight, easy to use, and run in both dev
 ## **Features**
 
 * **Symptom Matching:** Users can input a list of symptoms, and the app matches them with potential medical conditions stored in the database.
+* **Symptom Risk Level (Badge Color):** Depending on how many of the symptoms match a diagnosis/illness the color of the badges will be different.
 * **User Interface:** A simple, user-friendly interface built with HTML and CSS that allows easy input and display of results.
 * **Database Logging:** All user-submitted symptoms and results are saved in a PostgreSQL database for logging and future analysis.
-* **Confidence Scores:** Each diagnosis is accompanied by a confidence score that represents the system's match confidence based on the input symptoms.
+
+![Result](https://github.com/user-attachments/assets/69999250-8496-4242-a935-a2482e448adb)
 
 ---
 
@@ -99,6 +103,8 @@ This application is intended to be lightweight, easy to use, and run in both dev
    flask db upgrade
    ```
 
+![DB](https://github.com/user-attachments/assets/9d0a19ad-9800-4036-8913-d23310c33313)
+
 ---
 
 ## **Usage**
@@ -116,6 +122,8 @@ To run the application in development mode:
 2. **Access the application in your browser:**
    Navigate to `http://127.0.0.1:5000/` to interact with the application.
 
+![Main](https://github.com/user-attachments/assets/e1f3a2ad-7859-4225-9a0e-44186fb396a7)
+
 ### Docker Deployment
 
 Diagnosify is also Dockerized for easy deployment in a containerized environment.
@@ -129,6 +137,8 @@ Diagnosify is also Dockerized for easy deployment in a containerized environment
 2. **Access the application via Docker:**
    Once the app is up and running in Docker, you can access it through `http://localhost:5000/`.
 
+![Main](https://github.com/user-attachments/assets/e1f3a2ad-7859-4225-9a0e-44186fb396a7)
+
 ---
 
 ## **Database Structure**
@@ -141,6 +151,8 @@ Diagnosify uses PostgreSQL to store user-submitted symptoms and diagnosis result
 * `symptom`: String (120 characters) – The symptom inputted by the user.
 * `matched_condition`: String (120 characters) – The condition that was matched to the symptom.
 * `timestamp`: DateTime – The date and time when the symptom was logged.
+
+![DB Structure](https://github.com/user-attachments/assets/8d018a62-0411-48cb-91dc-b485f2a251e2)
 
 ---
 
@@ -162,6 +174,8 @@ The project includes basic unit tests and can be expanded for comprehensive test
 ```bash
 pytest
 ```
+
+![PyTest](https://github.com/user-attachments/assets/9da6107f-1d4e-433e-b363-8600864dacfd)
 
 Make sure your environment is set up correctly, and all dependencies are installed before running the tests.
 

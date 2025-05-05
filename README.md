@@ -26,11 +26,3 @@ python run.py
 
 ## Result Page
 ![Result](https://github.com/user-attachments/assets/69999250-8496-4242-a935-a2482e448adb)
-
-## RANDOM
-```
-git branch -m main v1.0.0
-git fetch origin
-git branch -u origin/v1.0.0 v1.0.0
-git remote set-head origin -a
-```

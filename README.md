@@ -1,8 +1,8 @@
 # **Diagnosify - Symptom Checker Web Application**
 
-Diagnosify is a simple, web-based symptom checker that helps users match their symptoms with possible medical diagnoses. It provides a straightforward user interface for inputting symptoms, comparing them with a database of conditions, and displaying the most likely diagnoses along with their confidence scores.
+Diagnosify is a simple, web-based symptom checker that helps users match their symptoms with possible medical diagnoses. It provides a straightforward user interface for inputting symptoms, comparing them with a database of conditions, and displaying the most likely diagnoses along their risk scores which are represented in 3 colors (green, orange, red).
 
-![diagnosify_icon](https://github.com/user-attachments/assets/8dbc8a53-ae6f-4b04-b7e8-e1df115410f6)
+![Diagnosify Logo/Icon](https://github.com/user-attachments/assets/8dbc8a53-ae6f-4b04-b7e8-e1df115410f6)
 
 ---
 
@@ -26,9 +26,7 @@ Diagnosify is a simple, web-based symptom checker that helps users match their s
 
 ## **Overview**
 
-Diagnosify is a web application built with Python (Flask), PostgreSQL, and Docker, aimed at helping users quickly identify potential diagnoses based on the symptoms they provide. The app uses a simple algorithm to match symptoms with medical conditions, providing users with a list of possible diagnoses and confidence scores.
-
-This application is intended to be lightweight, easy to use, and run in both development and production environments.
+Diagnosify is a web application built with Python (Flask), PostgreSQL, and Docker, aimed at helping users quickly identify potential diagnoses based on the symptoms they provide. The app uses a simple algorithm to match symptoms with medical conditions. This application is intended to be lightweight, easy to use, and run in both development and production environments.
 
 ---
 

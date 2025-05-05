@@ -1,31 +1,53 @@
 <!DOCTYPE html>
 <html lang="mn">
 <head>
+  <!-- Meta tags for character set and responsiveness -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Title of the page, shown in the browser tab -->
   <title>Diagnosify | Шинж Тэмдэг Шалгах</title>
+
+  <!-- Link to Google Fonts to load the Poppins font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Link to external CSS file for styling -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <!-- FontAwesome icons for various UI elements -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Favicon for the site -->
   <link rel="icon" href="{{ url_for('static', filename='diagnosify_icon.png') }}" type="image/png">
 </head>
 <body class="gradient-bg">
+  <!-- Main content container with glass effect and background gradient -->
   <div class="container glass morph">
+    
+    <!-- Page header with an icon and title -->
     <h1><i class="fas fa-microscope"></i> Diagnosify</h1>
+
+    <!-- Tagline below the title -->
     <p class="tagline">🔬 Өвчний шинж тэмдэг таних ухаалаг систем</p>
 
+    <!-- Form to submit symptoms -->
     <form method="POST" class="form-style">
+      
+      <!-- Input group for symptoms with a label and underline effect -->
       <div class="input-group">
-        <input type="text" id="symptoms" name="symptoms" required>
-        <label for="symptoms"><i class="fas fa-heartbeat"></i> Шинж тэмдгүүд (таслалаар):</label>
-        <div class="underline"></div>
+        <input type="text" id="symptoms" name="symptoms" required> <!-- Input field for symptoms -->
+        <label for="symptoms"><i class="fas fa-heartbeat"></i> Шинж тэмдгүүд (таслалаар):</label> <!-- Label with icon -->
+        <div class="underline"></div> <!-- Underline effect when input is focused -->
       </div>
+
+      <!-- Submit button to submit the form -->
       <button type="submit" class="btn">
         <i class="fas fa-search-plus"></i> Шалгах
       </button>
     </form>
 
+    <!-- Footer section with copyright -->
     <footer>
       <p><i class="fas fa-code"></i> 2025 ⎯ TX Software</p>
     </footer>

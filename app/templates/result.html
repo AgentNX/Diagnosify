@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html lang="mn">
 <head>
+  <!-- Meta tags for character set and responsiveness -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Title of the page, shown in the browser tab -->
   <title>Diagnosify | Үр дүн</title>
+
+  <!-- Link to Google Fonts to load the Poppins font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Link to external CSS file for styling -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <!-- FontAwesome icons for various UI elements -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Favicon for the site -->
   <link rel="icon" href="{{ url_for('static', filename='diagnosify_icon.png') }}" type="image/png">
 </head>
 <body class="gradient-bg">
+  <!-- Main content container with glass effect and background gradient -->
   <div class="container glass morph">
+    
+    <!-- Page header with an icon and title -->
     <h1><i class="fas fa-notes-medical"></i> Үр дүн</h1>
+
+    <!-- Tagline for the results page -->
     <p class="tagline">🧠 Таны шинж тэмдгүүдтэй хамгийн тохирох өвчнүүд:</p>
 
+    <!-- Display the symptoms input by the user -->
     <div class="symptom-chip">
       <i class="fas fa-stethoscope"></i>
       <span>{{ ', '.join(symptoms) }}</span>
     </div>
 
+    <!-- List of diagnosis results -->
     <ul class="results-list">
       {% for result in results %}
+        <!-- For each result, calculate match percentage -->
         {% set match_percentage = result['match_count'] / result['total_symptoms'] %}
         <li>
           <div class="result-title">
@@ -28,6 +47,7 @@
             <span>{{ result['name'] }}</span>
           </div>
           <div class="result-score">
+            <!-- Badge with match count and color based on match percentage -->
             <span class="badge {% if match_percentage >= 0.75 %}high{% elif match_percentage >= 0.5 %}medium{% else %}low{% endif %}">
               {{ result['match_count'] }}/{{ result['total_symptoms'] }} шинж тэмдэг таарсан!
             </span>
@@ -36,6 +56,7 @@
       {% endfor %}
     </ul>
     
+    <!-- Button to go back to the home page -->
     <a href="/" class="btn"><i class="fas fa-arrow-left"></i> Буцах</a>
   </div>
 </body>

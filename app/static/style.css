@@ -5,222 +5,223 @@
   padding: 0;
 }
 
+/* Body Styling */
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #f0f4ff, #dfefff);
-  color: #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  font-family: 'Poppins', sans-serif; /* Sets the font family to 'Poppins' for a modern, clean look */
+  background: linear-gradient(135deg, #f0f4ff, #dfefff); /* Creates a diagonal gradient background */
+  color: #333; /* Sets the text color to dark gray for readability */
+  display: flex; /* Enables flexbox for centering content */
+  align-items: center; /* Vertically centers the content */
+  justify-content: center; /* Horizontally centers the content */
+  min-height: 100vh; /* Ensures the body takes up the full viewport height */
 }
 
-/* Container */
+/* Container Styling */
 .container {
-  background: rgba(255, 255, 255, 0.75);
-  padding: 2rem;
-  width: 90%;
-  max-width: 600px;
-  border-radius: 1rem;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-  text-align: center;
-  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255, 255, 255, 0.75); /* Semi-transparent white background */
+  padding: 2rem; /* Adds internal padding for spacing */
+  width: 90%; /* Container takes up 90% of the width, maxing out at 600px */
+  max-width: 600px; /* Sets the maximum width of the container */
+  border-radius: 1rem; /* Rounds the corners of the container */
+  backdrop-filter: blur(20px); /* Applies a blur effect behind the container */
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1); /* Adds a soft shadow around the container */
+  text-align: center; /* Centers the text inside the container */
+  border: 1px solid rgba(255,255,255,0.4); /* Adds a subtle border with a semi-transparent white color */
 }
 
-/* Header */
+/* Header Styling */
 .container h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 2rem; /* Increases the font size of the header */
+  margin-bottom: 0.5rem; /* Adds space below the header */
 }
 
 .tagline {
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 2rem;
+  font-size: 1rem; /* Sets the font size for the tagline */
+  color: #666; /* Sets a light gray color for the tagline */
+  margin-bottom: 2rem; /* Adds space below the tagline */
 }
 
-/* Form */
+/* Form Styling */
 .form-style {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  display: flex; /* Uses flexbox to layout form elements */
+  flex-direction: column; /* Arranges form elements in a column */
+  gap: 1.5rem; /* Adds space between form elements */
 }
 
 .input-group {
-  position: relative;
+  position: relative; /* Positions input and label elements relative to each other */
 }
 
 .input-group input {
-  width: 100%;
-  padding: 1rem;
-  border: none;
-  background: transparent;
-  color: #000;
-  border-bottom: 2px solid #888;
-  font-size: 1rem;
-  outline: none;
+  width: 100%; /* Makes the input field take up the full width of the container */
+  padding: 1rem; /* Adds padding inside the input field */
+  border: none; /* Removes the border */
+  background: transparent; /* Makes the background transparent */
+  color: #000; /* Sets the text color to black */
+  border-bottom: 2px solid #888; /* Adds a thin border at the bottom of the input field */
+  font-size: 1rem; /* Sets the font size inside the input field */
+  outline: none; /* Removes the outline when the input is focused */
 }
 
 .input-group label {
-  position: absolute;
-  top: 0.8rem;
-  left: 1rem;
-  font-size: 0.9rem;
-  color: #888;
-  pointer-events: none;
-  transition: 0.3s ease;
+  position: absolute; /* Positions the label element absolutely */
+  top: 0.8rem; /* Sets the vertical position of the label */
+  left: 1rem; /* Sets the horizontal position of the label */
+  font-size: 0.9rem; /* Sets the font size of the label */
+  color: #888; /* Sets the color of the label to light gray */
+  pointer-events: none; /* Prevents interaction with the label */
+  transition: 0.3s ease; /* Smooth transition for label movement */
 }
 
 .input-group input:focus + label,
 .input-group input:not(:placeholder-shown) + label {
-  top: -0.8rem;
-  left: 0;
-  font-size: 0.75rem;
-  color: #00b8d4;
+  top: -0.8rem; /* Moves the label up when input is focused or not empty */
+  left: 0; /* Aligns the label to the left edge */
+  font-size: 0.75rem; /* Reduces the font size of the label */
+  color: #00b8d4; /* Changes the label color to a bright teal */
 }
 
 .underline {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  width: 0;
-  background-color: #00b8d4;
-  transition: 0.3s;
+  position: absolute; /* Positions the underline element */
+  bottom: 0; /* Aligns the underline at the bottom of the input */
+  left: 0; /* Aligns the underline to the left */
+  height: 2px; /* Sets the height of the underline */
+  width: 0; /* Starts with zero width */
+  background-color: #00b8d4; /* Sets the color of the underline */
+  transition: 0.3s; /* Smooth transition for the underline effect */
 }
 
 .input-group input:focus ~ .underline {
-  width: 100%;
+  width: 100%; /* Expands the underline width when the input is focused */
 }
 
-/* Button */
+/* Button Styling */
 .btn {
-  padding: 0.8rem 1.5rem;
-  background: linear-gradient(to right, #4facfe, #00f2fe);
-  color: #fff;
-  font-weight: bold;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: 0.3s;
-  text-decoration: none;
-  display: inline-block;
+  padding: 0.8rem 1.5rem; /* Adds padding inside the button */
+  background: linear-gradient(to right, #4facfe, #00f2fe); /* Creates a gradient background for the button */
+  color: #fff; /* Sets the text color to white */
+  font-weight: bold; /* Makes the text bold */
+  border: none; /* Removes the border */
+  border-radius: 30px; /* Rounds the corners of the button */
+  cursor: pointer; /* Changes the cursor to a pointer when hovered */
+  transition: 0.3s; /* Adds a smooth transition effect for hover */
+  text-decoration: none; /* Removes text decoration */
+  display: inline-block; /* Allows the button to be displayed as an inline block */
 }
 
 .btn:hover {
-  background: linear-gradient(to right, #43e97b, #38f9d7);
-  color: #fff;
+  background: linear-gradient(to right, #43e97b, #38f9d7); /* Changes the gradient on hover */
+  color: #fff; /* Ensures the text color stays white on hover */
 }
 
-/* Symptom chip */
+/* Symptom Chip Styling */
 .symptom-chip {
-  background: rgba(0, 184, 212, 0.1);
-  padding: 0.6rem 1rem;
-  border-radius: 20px;
-  margin: 1rem auto;
-  display: inline-flex;
-  gap: 0.5rem;
-  align-items: center;
-  color: #00b8d4;
-  font-size: 0.95rem;
+  background: rgba(0, 184, 212, 0.1); /* Light blue background for symptom chips */
+  padding: 0.6rem 1rem; /* Adds padding around the text */
+  border-radius: 20px; /* Rounds the corners of the chip */
+  margin: 1rem auto; /* Centers the chips with vertical spacing */
+  display: inline-flex; /* Allows multiple chips to be displayed inline */
+  gap: 0.5rem; /* Adds space between the icon and text */
+  align-items: center; /* Vertically aligns the items within the chip */
+  color: #00b8d4; /* Sets the text color to teal */
+  font-size: 0.95rem; /* Sets the font size of the chip text */
 }
 
-/* Results Section */
+/* Results Section Styling */
 .results-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  list-style: none; /* Removes default list styling */
+  padding: 0; /* Removes padding */
+  margin: 0; /* Removes margin */
 }
 
 .results-list li {
-  background: #f9fafe;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  border: 1px solid #e0e7ff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  background: #f9fafe; /* Sets the background color for the results */
+  padding: 1rem; /* Adds padding inside each result */
+  margin-bottom: 1rem; /* Adds spacing between results */
+  border-radius: 8px; /* Rounds the corners of each result */
+  border: 1px solid #e0e7ff; /* Adds a subtle border around each result */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Adds a soft shadow around the result */
+  text-align: left; /* Aligns the text to the left */
+  display: flex; /* Uses flexbox for layout */
+  flex-direction: column; /* Stacks content vertically */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transitions for hover effect */
 }
 
 /* Hover Effect for Results */
 .results-list li:hover {
-  background-color: #f1f8ff;
-  border-color: #c6d7ff;
+  background-color: #f1f8ff; /* Changes background color on hover */
+  border-color: #c6d7ff; /* Changes border color on hover */
 }
 
-/* Result Title */
+/* Result Title Styling */
 .result-title {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 5px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  font-size: 18px; /* Sets the font size of the result title */
+  font-weight: 600; /* Makes the title bold */
+  margin-bottom: 5px; /* Adds space below the title */
+  display: flex; /* Uses flexbox for layout */
+  align-items: center; /* Vertically aligns the title */
+  gap: 10px; /* Adds space between the title and the icon */
 }
 
 .result-title span {
-  color: #4facfe; /* Diagnosis name color */
-  font-size: 1.1rem;
+  color: #4facfe; /* Sets the color of the diagnosis name */
+  font-size: 1.1rem; /* Slightly increases the font size of the diagnosis name */
 }
 
-/* Result Badge (Match Count) */
+/* Result Badge (Match Count) Styling */
 .result-score .badge {
-  font-size: 14px;
-  padding: 6px 12px;
-  background-color: #38f9d7; /* Default color for the match count */
-  color: #333;
-  border-radius: 12px;
-  display: inline-block;
-  font-weight: bold;
-  margin-top: 5px;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease;
+  font-size: 14px; /* Sets the font size of the badge */
+  padding: 6px 12px; /* Adds padding inside the badge */
+  background-color: #38f9d7; /* Sets the default background color */
+  color: #333; /* Sets the text color to dark gray */
+  border-radius: 12px; /* Rounds the corners of the badge */
+  display: inline-block; /* Makes the badge an inline block */
+  font-weight: bold; /* Makes the badge text bold */
+  margin-top: 5px; /* Adds space above the badge */
+  text-transform: uppercase; /* Makes the badge text uppercase */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
-/* Color classes for the badge (Match percentage based) */
+/* Color Classes for Match Badge */
 .badge.high {
-  background-color: #ff4c4c; /* red for high match */
+  background-color: #ff4c4c; /* Red for high match */
 }
 
 .badge.medium {
-  background-color: #ff6600; /* orange for medium match */
+  background-color: #ff6600; /* Orange for medium match */
 }
 
 .badge.low {
-  background-color: #155800; /* green for low match */
+  background-color: #155800; /* Green for low match */
 }
 
-/* Animations for smoother transition effects */
+/* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(20px); } /* Starts the animation with no opacity and a downward movement */
+  to { opacity: 1; transform: translateY(0); } /* Ends with full opacity and normal position */
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(10px); } /* Starts with no opacity and a slight downward movement */
+  to { opacity: 1; transform: translateY(0); } /* Ends with full opacity and normal position */
 }
 
-/* Responsive */
+/* Responsive Design */
 @media screen and (max-width: 600px) {
   .container {
-    padding: 1.5rem;
+    padding: 1.5rem; /* Reduces padding in the container for small screens */
   }
 
   .btn {
-    width: 100%;
+    width: 100%; /* Makes the button take up full width on small screens */
   }
 
   .results-list li {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; /* Stacks result items vertically on small screens */
+    align-items: flex-start; /* Aligns items to the left */
   }
 
   .result-score .badge {
-    margin-top: 0.5rem;
+    margin-top: 0.5rem; /* Adds space above the badge */
   }
 }

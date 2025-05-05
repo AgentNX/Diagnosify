@@ -1,26 +1,24 @@
 # Use the official Python image from Docker Hub
 FROM python:3.13-slim
 
-# Install dependencies including PostgreSQL development libraries (required for psycopg2-binary)
+# Install system dependencies including PostgreSQL dev libraries
 RUN apt-get update && \
-    apt-get install -y \
-    libpq-dev \
-    && rm -rf /var/lib/apt/lists/*
+    apt-get install -y libpq-dev curl && \
+    rm -rf /var/lib/apt/lists/*
 
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
-# Copy the requirements.txt file into the container
+# Copy and install Python dependencies
 COPY requirements.txt .
-
-# Install the Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application code into the container
+# Copy app code
 COPY . .
 
-# Expose port 5000 for the app
-EXPOSE 5000
+# Download and set permissions for wait-for-it.sh
+RUN curl -o /app/wait-for-it.sh https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh && \
+    chmod +x /app/wait-for-it.sh
 
-# Define the command to run the application
-CMD ["python", "run.py"]
+# Expose Flask default port
+EXPOSE 5000

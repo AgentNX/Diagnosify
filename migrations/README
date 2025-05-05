@@ -1,0 +1,6 @@
+The `/migrations` folder stores files that help you manage changes to your database schema (like adding or modifying tables). It keeps track of these changes so you can apply them to the database and also revert them if needed.
+
+* **`versions/` folder**: Contains migration files that describe changes (like adding columns or tables).
+* **`alembic.ini`**: Configures how migrations connect to the database.
+
+In short, it's a folder for tracking and applying changes to your database schema.

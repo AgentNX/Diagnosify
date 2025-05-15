@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diagnosify - Санал хүсэлт</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="icon" href="{{ url_for('static', filename='diagnosify_icon.png') }}" type="image/png">
+</head>
+<body class="gradient-bg">
+
+  <nav class="nav-bar">
+    <ul id="nav-menu">
+      <li><a href="{{ url_for('main.index') }}" class="{% if request.endpoint == 'main.index' %}active{% endif %}">Нүүр</a></li>
+      <li><a href="{{ url_for('main.services') }}" class="{% if request.endpoint == 'main.services' %}active{% endif %}">Үйлчилгээ</a></li>
+      <li><a href="{{ url_for('main.about') }}" class="{% if request.endpoint == 'main.about' %}active{% endif %}">Бидний Тухай</a></li>
+      <li><a href="{{ url_for('main.faq') }}" class="{% if request.endpoint == 'main.faq' %}active{% endif %}">Түгээмэл Асуулт</a></li>
+      <li><a href="{{ url_for('main.contact') }}" class="{% if request.endpoint == 'main.contact' %}active{% endif %}">Холбоо Барих</a></li>
+      <li><a href="{{ url_for('main.feedback') }}" class="{% if request.endpoint == 'main.feedback' %}active{% endif %}">Санал Хүсэлт</a></li>
+    </ul>
+  </nav>
+
+  <div class="container glass morph" style="text-align: center; margin-top: 100px;">
+    <h1><i class="fas fa-microscope"></i> Diagnosify</h1>
+    <p class="tagline">🔬 Таны эрүүл мэндийн туслах</p>
+  </div>
+
+  <div class="container glass morph">
+    <h2>Санал хүсэлт</h2>
+    <p>Бидэнд өөрийн санал, зөвлөмжөө илгээнэ үү. Бид таны саналыг үргэлж хүлээн авдаг!</p>
+    <form method="POST">
+      <textarea name="feedback" rows="5" placeholder="Таны санал..."></textarea><br>
+      <button type="submit">Илгээх</button>
+    </form>
+  </div>
+</body>
+</html>

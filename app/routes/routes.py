@@ -2,37 +2,45 @@ from flask import Blueprint, render_template, request
 from app.services.matcher import match_symptoms
 from app.models.models import db, SymptomLog
 
-# Create a blueprint instance for handling routes related to the application's main functionality.
 main = Blueprint("main", __name__)
 
-# Define a route for the homepage ("/"), supporting both GET and POST methods.
 @main.route("/", methods=["GET", "POST"])
 def index():
-    # Handle POST requests when user submits symptoms
     if request.method == "POST":
-        # Retrieve symptoms input from the form, and convert them to lowercase and split by commas
         symptoms_input = request.form.get("symptoms", "")
         symptoms = symptoms_input.lower().split(",")
-        
-        # Match symptoms using a custom matcher service
         results = match_symptoms(symptoms)
 
-        # Iterate over the results and log matched symptoms in the database
         for result in results:
-            matched_symptoms = result.get("matched_symptoms", [])  # Safely get matched symptoms
-            if matched_symptoms:  # Check if matched_symptoms list is not empty
+            matched_symptoms = result.get("matched_symptoms", [])
+            if matched_symptoms:
                 log = SymptomLog(
-                    symptom=symptoms_input,  # Log the user's symptoms
-                    matched_condition=result.get("condition", "Unknown")  # Safely access the condition, default to "Unknown"
+                    symptom=symptoms_input,
+                    matched_condition=result.get("condition", "Unknown")
                 )
-                # Add the log entry to the session
                 db.session.add(log)
-
-        # Commit the session to save changes to the database
         db.session.commit()
 
-        # Render the results page with the matched symptoms and input symptoms
         return render_template("result.html", results=results, symptoms=symptoms)
 
-    # Render the index page if the request is a GET request (i.e., initial page load)
     return render_template("index.html")
+
+@main.route('/about')
+def about():
+    return render_template('about.html')
+
+@main.route('/services')
+def services():
+    return render_template('services.html')
+
+@main.route('/faq')
+def faq():
+    return render_template('faq.html')
+
+@main.route('/feedback')
+def feedback():
+    return render_template('feedback.html')
+
+@main.route('/contact')
+def contact():
+    return render_template('contact.html')

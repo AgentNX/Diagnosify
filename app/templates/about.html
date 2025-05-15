@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diagnosify - Бидний тухай</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="icon" href="{{ url_for('static', filename='diagnosify_icon.png') }}" type="image/png">
+</head>
+<body class="gradient-bg">
+
+  <nav class="nav-bar">
+    <ul id="nav-menu">
+      <li><a href="{{ url_for('main.index') }}" class="{% if request.endpoint == 'main.index' %}active{% endif %}">Нүүр</a></li>
+      <li><a href="{{ url_for('main.services') }}" class="{% if request.endpoint == 'main.services' %}active{% endif %}">Үйлчилгээ</a></li>
+      <li><a href="{{ url_for('main.about') }}" class="{% if request.endpoint == 'main.about' %}active{% endif %}">Бидний Тухай</a></li>
+      <li><a href="{{ url_for('main.faq') }}" class="{% if request.endpoint == 'main.faq' %}active{% endif %}">Түгээмэл Асуулт</a></li>
+      <li><a href="{{ url_for('main.contact') }}" class="{% if request.endpoint == 'main.contact' %}active{% endif %}">Холбоо Барих</a></li>
+      <li><a href="{{ url_for('main.feedback') }}" class="{% if request.endpoint == 'main.feedback' %}active{% endif %}">Санал Хүсэлт</a></li>
+    </ul>
+  </nav>
+
+  <div class="container glass morph" style="text-align: center; margin-top: 100px;">
+    <h1><i class="fas fa-microscope"></i> Diagnosify</h1>
+    <p class="tagline">🔬 Таны эрүүл мэндийн туслах</p>
+  </div>
+
+  <div class="container glass morph">
+    <h2>Бидний тухай</h2>
+    <p>Diagnosify нь хэрэглэгчдэд шинж тэмдгийн үндсэн дээр эрүүл мэндийн боломжит асуудлыг ойлгоход туслах, оношлогооны мэдээлэл олгох зорилготой дэвшилтэт вэб платформ юм. Манай систем нь олон төрлийн эмнэлгийн өгөгдөл, шинж тэмдгийн таарах байдалд үндэслэн хэрэглэгчдэд хамгийн боломжит оношийг санал болгодог.</p>
+    <p>Бид эрүүл мэндийн боловсролыг дэмжих, хүмүүс өөрийн эрүүл мэндэд илүү анхаарал тавих боломжийг нэмэгдүүлэхэд анхаарч ажилладаг. Diagnosify нь мэргэжлийн эмч нарын зөвлөгөөг орлоогүй, харин тэдний зөвлөгөөг дагахад зориулсан нэмэлт мэдээлэл, дэмжлэг үзүүлэх зорилготой.</p>
+    <p>Манай платформыг ашигласнаар хэрэглэгчид шинж тэмдгийнхээ талаар илүү сайн ойлголттой болж, эрүүл мэндийн асуудлын талаарх мэдээлэлд ойртох боломжтой болно. Мөн шаардлагатай бол эмчид хандах зөв цаг хугацааг олох, эрүүл мэнддээ хяналт тавихад туслах зорилготой.</p>
+  </div>
+</body>
+</html>

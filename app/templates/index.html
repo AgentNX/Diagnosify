@@ -13,8 +13,6 @@
   
   <!-- Link to external CSS file for styling -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
-  <!-- FontAwesome icons for various UI elements -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
@@ -22,6 +20,17 @@
   <link rel="icon" href="{{ url_for('static', filename='diagnosify_icon.png') }}" type="image/png">
 </head>
 <body class="gradient-bg">
+  <nav class="nav-bar">
+    <ul id="nav-menu">
+      <li><a href="{{ url_for('main.index') }}" class="{% if request.endpoint == 'main.index' %}active{% endif %}">Нүүр</a></li>
+      <li><a href="{{ url_for('main.services') }}" class="{% if request.endpoint == 'main.services' %}active{% endif %}">Үйлчилгээ</a></li>
+      <li><a href="{{ url_for('main.about') }}" class="{% if request.endpoint == 'main.about' %}active{% endif %}">Бидний Тухай</a></li>
+      <li><a href="{{ url_for('main.faq') }}" class="{% if request.endpoint == 'main.faq' %}active{% endif %}">Түгээмэл Асуулт</a></li>
+      <li><a href="{{ url_for('main.contact') }}" class="{% if request.endpoint == 'main.contact' %}active{% endif %}">Холбоо Барих</a></li>
+      <li><a href="{{ url_for('main.feedback') }}" class="{% if request.endpoint == 'main.feedback' %}active{% endif %}">Санал Хүсэлт</a></li>
+    </ul>
+  </nav>
+
   <!-- Main content container with glass effect and background gradient -->
   <div class="container glass morph">
     
@@ -36,7 +45,7 @@
       
       <!-- Input group for symptoms with a label and underline effect -->
       <div class="input-group">
-        <input type="text" id="symptoms" name="symptoms" required> <!-- Input field for symptoms -->
+        <input type="text" id="symptoms" name="symptoms" placeholder=" " required>
         <label for="symptoms"><i class="fas fa-heartbeat"></i> Шинж тэмдгүүд (таслалаар):</label> <!-- Label with icon -->
         <div class="underline"></div> <!-- Underline effect when input is focused -->
       </div>
@@ -49,7 +58,7 @@
 
     <!-- Footer section with copyright -->
     <footer>
-      <p><i class="fas fa-code"></i> 2025 ⎯ TX Software</p>
+      <p><i class="fas fa-code"></i> 2025 ⎯ TX Software©</p>
     </footer>
   </div>
 </body>
